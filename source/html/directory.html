@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="Zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="../lib/MemoryBlog.ico" type="image/x-icon" />                <!--TODO 更换icon-->
+    <link rel="shortcut icon" href="../lib/MemoryBlog.ico" type="image/x-icon"/>        <!--TODO 更换icon-->
+    <title>记忆 博客</title>
+    <link rel="stylesheet" href="../css/directory.css">
+</head>
+<body>
+    <div class="background"></div>
+    <audio id="bgm" src="../lib/HappyLife.mp3" autoplay loop></audio>
+    <script src="../js/bgm.js"></script>
+    <div class="welBox">
+        <script src="source/js/bgm.js"></script>
+        <h1><a href="../../index.html">Welcome to Memory Blog!</a></h1>
+    </div>
+    <div class="container">
+        <a href="../html/file1.html">
+            <div class="card" id="card1">
+                <h2>1</h2>
+                <div id="label1">Markdown<br>语法示例</div>
+            </div>
+        </a>
+        <a href="../html/file2.html">
+            <div class="card" id="card2">
+                <h2>2</h2>
+                <div id="label2">记录我的<br>黑苹果之路</div>
+            </div>
+        </a>
+        <a href="../html/file3.html">
+            <div class="card" id="card3">
+                <h2>3</h2>
+                <div id="label3">Markdown<br>语法示例</div>                              <!--TODO 更换文字-->
+            </div>
+        </a>
+        <a href="../html/file4.html">
+            <div class="card" id="card4">
+                <h2>4</h2>
+                <div id="label4">Markdown<br>语法示例</div>                              <!--TODO 更换文字-->
+            </div>
+        </a>
+        <a href="../html/file5.html">
+            <div class="card" id="card5">
+                <h2>...</h2>
+                <div id="label5">更多</div>
+            </div>
+        </a>
+    </div>
+    <div id="clock"></div>
+    <script src="../js/radialIndicator.min.js"></script>
+    <script src="../js/angular.radialIndicator.js"></script>
+    <script type="text/javascript">
+        var radialObj = radialIndicator('#clock', {
+            radius: 50,
+            barWidth: 10,
+            barColor: "deepskyblue",
+            fontColor: "white",
+            minValue: 0,
+            maxValue: 60,
+            fontWeight: 'normal',
+            roundCorner: true,
+            format: function (value) {
+                var date = new Date();
+                return date.getHours() + ':' + date.getMinutes();
+            }
+        });
+        setInterval(function () {
+            radialObj.value(new Date().getSeconds() + 1);
+        }, 1000);
+    </script>
+    <div>
+        <ul>
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="#">关于</a></li>                                                    <!--TODO 打开README.md-->
+            <li><a href="#">服务与支持</a></li>                                               <!--TODO 介绍整个博客系统-->
+            <li>
+                <a class="dorp">
+                    <span>团队</span>
+                    <div class="dorp_con">
+                        <p class="pselect">Chen Yan</p>
+                        <p class="pselect">Jie Wang</p>
+                        <p class="pselect">Shuqin Luo</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="https://github.com/kirito66465">联系我们</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.background {
+    filter:alpha(opacity=50);
+    opacity: 0.8;
+    height:100%;
+    width:100%;
+    position:absolute;
+    background: url("../lib/background.jpg") no-repeat fixed center 0;
+    background-size: 100% 100%;
+}
+
+/*登陆*/
+.box {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    text-align: center;
+}
+.box h1 {
+    color: #191919;
+    /*text-transform: uppercase;*/
+    font-weight: 500;
+}
+.box input[type='text'],
+.box input[type='password'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    /*border: 2px solid #3498db;*/
+    border: 2px solid rgba(0, 113, 241, 1);
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: #191919;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.box input[type='text']:focus,
+.box input[type='password']:focus {
+    width: 280px;
+    border-color: #2ecc71;
+    font-size: 16px;
+}
+.submit {
+    border: 0;
+    background: none;
+    margin: 0 auto 20px;
+    display: inline-block;
+    text-align: center;
+    /*border: 2px solid #3498db;*/
+    border: 2px solid rgba(0, 113, 241, 1);
+    padding: 10px 40px;
+    outline: none;
+    color: #191919;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+}
+.submit:hover {
+    background: transparent;
+    border-color: #2ecc71;
+    font-size: 30px;
+}
+
+/*时钟*/
+#clock{
+    position: absolute;
+    top: -70%;
+    left: -260%;
+    transform: translate(-50%,-50%);
+}
+
+/*导航栏*/
+ul{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul li{
+    list-style: none;
+    font-size: 16px;
+}
+ul li a{
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #262626;
+    font-weight: bold;
+    transition: .5s;
+}
+ul li a:hover{
+    color: #262626;
+    font-size: 18px;
+}
+ul li a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+}
+ul li a:hover:before{
+    transform: scaleY(1.2);
+    opacity: 1;
+}
+ul li a:after{
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: scale(0);
+    transition: .5s;
+    z-index: -1;
+}
+ul li a:hover:after{
+    transform: scale(1);
+}
+
+/*下拉菜单*/
+.dorp{
+    position: relative;
+    display: inline-block;
+}
+.dorp_con{
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px #262626;
+    padding: 12px 16px;
+}
+.dorp:hover .dorp_con{display:block;}
+.pselect {
+    position: relative;
+    display: block;
+    padding: 10px 12px;
+    margin: 16px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #262626;
+    font-weight: bold;
+    transition: .5s;
+    font-size: 14px;
+}
+.pselect:hover {
+    color: #262626;
+    font-size: 16px;
+}
+.pselect:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+}
+.pselect:hover:before {
+    transform: scaleY(1.2);
+    opacity: 1;
+}
+.pselect:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: scale(0);
+    transition: .5s;
+    z-index: -1;
+}
+.pselect:hover:after {
+    transform: scale(1);
+}
+
+#record1 {
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    left: 47%;
+}
+
+#record2 {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    left: 45%;
+}
+
+.aRecord {
+    display:inline-block;
+    text-decoration:none;
+    height:20px;
+    line-height:20px;
+}
+
+.pRecord {
+    float:left;
+    height:20px;
+    line-height:20px;
+    margin: 0px 0px 0px 5px;
+    color:#939393;
+}

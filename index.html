@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="Zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="source/lib/MemoryBlog.ico" type="image/x-icon" />                <!--TODO 更换icon-->
+    <link rel="shortcut icon" href="source/lib/MemoryBlog.ico" type="image/x-icon"/>        <!--TODO 更换icon-->
+    <title>记忆 博客</title>
+    <link rel="stylesheet" href="source/css/index.css">
+</head>
+<body>
+    <div class="background"></div>
+    <audio id="bgm" autoplay loop>
+        <source src="source/lib/HappyLife.mp3" type="audio/mpeg">
+        <source src="source/lib/HappyLife.ogg" type="audio/ogg">
+    </audio>
+    <form action="form.php" method="post">
+        <div class="box">
+            <script src="source/js/bgm.js"></script>
+            <h1>Welcome to Memory Blog!</h1>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <a class="submit" href="source/html/directory.html"><b><i>Login</i></b></a>     <!--TODO 重设登录-->
+            <div id="clock"></div>
+            <script src="source/js/radialIndicator.min.js"></script>
+            <script src="source/js/angular.radialIndicator.js"></script>
+            <script type="text/javascript">
+                var radialObj = radialIndicator('#clock', {
+                    radius: 50,
+                    barWidth: 10,
+                    barColor: "deepskyblue",
+                    fontColor: "white",
+                    minValue: 0,
+                    maxValue: 60,
+                    fontWeight: 'normal',
+                    roundCorner: true,
+                    format: function (value) {
+                        var date = new Date();
+                        return date.getHours() + ':' + date.getMinutes();
+                    }
+                });
+                setInterval(function () {
+                    radialObj.value(new Date().getSeconds() + 1);
+                }, 1000);
+            </script>
+        </div>
+    </form>
+    <div>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">关于</a></li>                                                    <!--TODO 打开README.md-->
+            <li><a href="#">服务与支持</a></li>                                               <!--TODO 介绍整个博客系统-->
+            <li>
+                <a class="dorp">
+                    <span>团队</span>
+                    <div class="dorp_con">
+                        <p class="pselect">Chen Yan</p>
+                        <p class="pselect">Jie Wang</p>
+                        <p class="pselect">Shuqin Luo</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="https://github.com/kirito66465">联系我们</a></li>
+        </ul>
+    </div>
+    <div id="record1">
+        <a href="http://www.beian.miit.gov.cn/" class="aRecord" >
+            <p class="pRecord">苏ICP备20042820号</p>
+        </a>
+    </div>
+    <div id="record2">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32020602001045" class="aRecord">
+            <img src="source/lib/record.png" style="float:left;"/>
+            <p class="pRecord">苏公网安备 32020602001045号</p>
+        </a>
+    </div>
+</body>
+</html>
